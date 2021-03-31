@@ -1,0 +1,109 @@
+<script src="../js/join.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="/bootstrap/vendor/jquery/jquery.min.js"></script>
+<script src="/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom fonts for this template -->
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="/bootstrap/css/business-casual.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/join.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Casual - Start Bootstrap Theme</title>
+
+
+</head>
+
+<body>
+
+<div id="head"></div>
+
+<!--{{! 본문내용}}-->
+<div id="userJoinSearchBody" class="container">
+
+    <h6>기본정보</h6>
+
+    <!--    {{! 사용자 ID}}-->
+    <div class="form-group form-inline input-group main-margin-left" style="margin-top: 30px;">
+        <label class="input-group-addon col-2 border-style">사용자 아이디<span class="required-sign">&nbsp;*</span></label>
+        <input id="joinIdForm" oninput="checkId()" class="form-control col-3" type="text" title="사용자 아이디"
+               placeholder="ex) test2221"
+               maxlength="50" required/>
+    </div>
+
+    <!--    {{! 사용자 비밀번호}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">비밀번호<span class="required-sign">&nbsp;*</span></label>
+        <input type="password" id="joinPasswordForm" class="form-control col-3" title="비밀번호" required/>
+        <label class="input-group-addon col-2 border-style">비밀번호 확인<span class="required-sign">&nbsp;*</span></label>
+        <input type="password" id="joinPasswordConfirmForm" class="form-control col-3" title="비밀번호 확인" maxlength="100"
+               required/>
+    </div>
+
+    <!--    {{! 이름}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">이름<span class="required-sign">&nbsp;*</span></label>
+        <input id="joinNameForm" class="form-control col-3" type="text" title="이름" placeholder="ex) 홍길동 or 업체명"
+               maxlength="50" required/>
+    </div>
+
+    <!--    {{! 사용자 전화번호}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">전화번호01<span class="required-sign">&nbsp;*</span></label>
+        <input type="text" id="joinTel1Form" class="form-control col-3" title="전화번호01" placeholder="번호만 입력하세요."
+               maxlength="14" required/>
+        <label class="input-group-addon col-2 border-style">전화번호02</label>
+        <input type="text" id="joinTel2Form" class="form-control col-3" title="전화번호02" placeholder="번호만 입력하세요."
+               maxlength="14"/>
+    </div>
+
+    <!--    {{! 이메일}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">이메일<span class="required-sign"></span></label>
+        <input id="email" class="form-control col-3" type="text" title="이메일" placeholder="abs123@naver.com"
+               maxlength="100"/>
+    </div>
+
+    <h6>배송지 정보</h6>
+    <!--    {{! 배송지 주소}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">우편번호<span class="required-sign">&nbsp;*</span></label>
+        <input id="joinZipcodeForm" type="text" class="joinZipcodeFormcol-2 form-control clickable" placeholder="여기를 누르세요" required
+               readonly/>
+          </div>
+
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style">배송지주소<span class="required-sign">&nbsp;*</span></label>
+        <input id="joinAddressForm" type="text" class="col-4 form-control" title="배송지 주소" required/></div>
+    </div>
+
+    <!--    {{! 배송지 상세주소}}-->
+    <div class="form-group form-inline input-group main-margin-left">
+        <label class="input-group-addon col-2 border-style" style="color:white">상세주소</label>
+        <input id="joinDetailAddressForm" class="col-8 form-control" type="text" title="배송지 상세주소" placeholder="상세주소"/>
+    </div>
+
+</div>
+
+<!--{{! 기능 버튼들}}-->
+<div style="text-align: right;"><input style="margin-right: 2.5%;" type="button"
+                                       class="common-button-style modify-button" value="등록" onclick="doJoin()"></div>
+
+
+<script>
+    $('#head').load('header');
+</script>
+</container>
+</body>
+</html>

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession
 class HomeController {
 
     @Autowired
-    var homeService:HomeService? = null
+    var homeService: HomeService? = null
 
     @RequestMapping("/index")
     fun home(model: Model?, session: HttpSession?): String? {
@@ -52,11 +52,15 @@ class HomeController {
      * @param data
      * @return
      */
-    @RequestMapping("join/do",method = arrayOf(RequestMethod.POST))
+    @RequestMapping("/join/do", method = arrayOf(RequestMethod.POST))
     @ResponseBody
-    fun doJoin(@RequestParam data:MutableMap<String,String>?): Map<String, Any?>? {
-        var resultCode= homeService?.join(data)
-        return mapOf("result" to 0)
+    fun doJoin(@RequestParam data: MutableMap<String, String>?): Map<String, Any?>? {
+        try {
+            val resultCode = homeService?.join(data)
+            return mapOf("result" to 0)
+        } catch (e : Exception) {
+            return mapOf("result" to 777)
+        }
     }
 
     @RequestMapping("/header")
@@ -65,3 +69,33 @@ class HomeController {
         return "/header"
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

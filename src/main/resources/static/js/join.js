@@ -11,9 +11,9 @@ function doJoin() {
             return false;
         }
     });
-    if($("#email").val() != "")
+    if($("#joinEmail").val() != "")
         var regExp = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/; //메일 정규식
-    var checkEmail = $("#email").val();
+    var checkEmail = $("#joinEmail").val();
 
     if(regExp.test(checkEmail) == true){
 
@@ -32,7 +32,7 @@ function doJoin() {
     }
 
     $.ajax({
-        url:"../user/join/do",
+        url:"../join/do",
         method:"POST",
         data:{
             "accountId":$("#joinIdForm").val(), //사용자 아이디
@@ -44,27 +44,17 @@ function doJoin() {
             "zipcode":$("#joinZipcodeForm").val(),//우편번호
             "address":$("#joinAddressForm").val(),//주소
             "detailAddress":$("#joinDetailAddressForm").val(),//상세주소
-
-
+            "email":$("#joinEmail").val()//이메일
         },
         dataType:"json",
         success:function (data) {
-            if(data.resultCode === 0){
+            if(data.result === 0){
                 alert("사용자등록을 완료했습니다.");
-                toPage("../user/inquiry.html");
-            }else if(data.resultCode === 1){
-                alert(data.description);
-            }else if(data.resultCode === 2){
-                alert(data.description);
-            }else if(data.resultCode === 9){
-                alert(data.description);
-            }else if(data.resultCode === 4){
-                alert(data.description);
-                regError("#userJoinSearchBody", "join_"+data.tagId);
-            }else if(data.resultCode === 3){
-                alert(data.description);
+                window.location.href="../index";
+            }else if(data.result === 777){
+                alert("에러발생");
             }else{
-                alert(unknownErrorMessage);
+                alert("알 수 없는 에러입니다. 문의해주세요");
             }
         },
         error:function (xhr,status,err) {

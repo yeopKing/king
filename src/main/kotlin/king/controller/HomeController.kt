@@ -47,6 +47,12 @@ class HomeController {
         return "/join"
     }
 
+    @RequestMapping("/pay")
+    fun pay(model: Model?, session: HttpSession?): String? {
+
+        return "/pay"
+    }
+
     /**
      * 사용자 등록 실행
      * @param data

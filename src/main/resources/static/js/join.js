@@ -54,7 +54,7 @@ function doJoin() {
             }else if(data.result === 777){
                 alert("에러발생");
             }else{
-                alert("알 수 없는 에러입니다. 문의해주세요");
+                alert("알 수 없는 에러입니다. 문의해주세요");Í
             }
         },
         error:function (xhr,status,err) {

@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.projectlombok:lombok:1.18.18")
     compile("org.springframework.boot:spring-boot-starter-mustache")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-jdbc")

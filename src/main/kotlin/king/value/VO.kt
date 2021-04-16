@@ -1,6 +1,7 @@
 package king.value
 
 import net.minidev.json.JSONArray
+import java.util.*
 
 
 object VO{
@@ -27,6 +28,13 @@ object VO{
             var varcustom_json: Map<String, String>    //JSON//결제 화면에 보여줄 사용자 정의 문구, 카카오페이와 사전 협의 필요
             // ex) iOS에서 사용자 인증 완료 후 가맹점 앱으로 자동 전환하는 방법(iOS만 예외 처리, 안드로이드 동작 안 함)
             //        - 다음과 같이 return_custom_url key 정보에 앱스킴을 넣어서 전송 "return_custom_url":"kakaotalk://"	X
+    )
+
+    data class kakaoPayReadyVO(
+          var tid : String ,
+          var next_redirect_pc_url : String ,
+          var created_at : Date
+
     )
 
 }
